@@ -1,4 +1,4 @@
-gradio_client
+gradio-client
 gradio
 numpy
 streamlit
