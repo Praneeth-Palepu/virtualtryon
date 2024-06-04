@@ -3,4 +3,3 @@ gradio
 numpy
 streamlit
 pillow
-tempfile
