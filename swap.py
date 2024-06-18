@@ -9,14 +9,13 @@ st.set_page_config(page_title="Fashion Tryon", layout="wide")
 # Title of the app
 st.title("Virtual Change Room...")
 
-hide_github_link = """
+banner = """
 <style>
-    .css-erpbzb edgvbvh3{ 
-        display: none; 
-    }
+    header {visibility: hidden;}
+    .css-18ni7ap.e8zbici2 {visibility: hidden;}
 </style>
 """
-st.markdown(hide_github_link, unsafe_allow_html=True)
+st.markdown(banner, unsafe_allow_html=True)
 
 
 # Instructions
