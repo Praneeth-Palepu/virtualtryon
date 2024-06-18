@@ -11,7 +11,7 @@ st.title("Virtual Change Room...")
 
 hide_github_link = """
 <style>
-    .css-q16mip e10z71040 { 
+    .css-erpbzb edgvbvh3{ 
         display: none; 
     }
 </style>
