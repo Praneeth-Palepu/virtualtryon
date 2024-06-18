@@ -4,8 +4,20 @@ import os
 import tempfile
 from gradio_client import Client, file
 
+st.set_page_config(page_title="Fashion Tryon", layout="wide")
+
 # Title of the app
 st.title("Virtual Change Room...")
+
+hide_github_link = """
+<style>
+    .css-q16mip e10z71040 { 
+        display: none; 
+    }
+</style>
+"""
+st.markdown(hide_github_link, unsafe_allow_html=True)
+
 
 # Instructions
 st.write("Upload the base image of the person and the garment to try")
