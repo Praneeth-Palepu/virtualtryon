@@ -1,7 +1,7 @@
 import streamlit as st
 from PIL import Image
 import os
-from gradio_client import Client, file
+from gradio_client import Client, handle_file
 
 st.set_page_config(page_title="Fashion Tryon", layout="wide")
 
@@ -54,13 +54,14 @@ if uploaded_image1 and uploaded_image2:
     with col3:
         client = Client("yisol/IDM-VTON")
         result = client.predict(
-                dict={"background":file(model_image_path)},
-                garm_img=file(garment_image_path),
+                dict={"background":handle_file(model_image_path)},
+                garm_img=handle_file(garment_image_path),
                 garment_des="Hello!!",
                 is_checked=True,
                 is_checked_crop=False,
                 denoise_steps=25,
                 seed=42,
-                api_name="/tryon"
+                api_name="/tryon",
+                save_
         )
         st.image(Image.open(result[0]).resize(model_image_size), caption='Swapped Garment', use_column_width=True)
