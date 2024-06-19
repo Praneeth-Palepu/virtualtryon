@@ -2,6 +2,7 @@ import streamlit as st
 from PIL import Image
 import os
 from gradio_client import Client, handle_file
+import tempfile
 
 st.set_page_config(page_title="Fashion Tryon", layout="wide")
 
