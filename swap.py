@@ -16,6 +16,24 @@ banner = """
 """
 st.markdown(banner, unsafe_allow_html=True)
 
+def remove_temp_files():
+    # Get the system's temporary directory
+    temp_dir = tempfile.gettempdir()
+
+    # List files in the temporary directory
+    for filename in os.listdir(temp_dir):
+        file_path = os.path.join(temp_dir, filename)
+        
+        # Ensure it's a regular file and not a directory before attempting to remove
+        if os.path.isfile(file_path):
+            try:
+                os.remove(file_path)
+                print(f"Removed: {file_path}")
+            except Exception as e:
+                print(f"Error while removing {file_path}: {e}")
+
+remove_temp_files()
+
 
 # Instructions
 st.write("Upload the base image of the person and the garment to try")
@@ -64,3 +82,4 @@ if uploaded_image1 and uploaded_image2:
                 api_name="/tryon",
         )
         st.image(Image.open(result[0]).resize(model_image_size), caption='Swapped Garment', use_column_width=True)
+remove_temp_files()
