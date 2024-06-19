@@ -62,6 +62,5 @@ if uploaded_image1 and uploaded_image2:
                 denoise_steps=25,
                 seed=42,
                 api_name="/tryon",
-                save_
         )
         st.image(Image.open(result[0]).resize(model_image_size), caption='Swapped Garment', use_column_width=True)
